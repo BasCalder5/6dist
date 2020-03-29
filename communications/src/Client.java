@@ -13,7 +13,7 @@ public class Client {
         ObjectOutputStream outputs;
 
         for (int i = 0; i < 5; i++) {
-            socket = new Socket(hostip.getHostName(), 1234); // verbinding maken met server
+            socket = new Socket(hostip.getHostName(), 42069); // verbinding maken met server
 
             outputs = new ObjectOutputStream(socket.getOutputStream()); // output op socket schrijven
             System.out.println("Request sent...");

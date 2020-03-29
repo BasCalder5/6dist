@@ -7,7 +7,7 @@ import java.net.Socket;
 public class Server {
 
     private static ServerSocket piServer;
-    private static int port = 1234;
+    private static int port = 42069;
 
     public static void main(String args[]) throws IOException, ClassNotFoundException {
         piServer = new ServerSocket(port); // server socket aanmaken
