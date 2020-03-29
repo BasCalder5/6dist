@@ -12,7 +12,7 @@ public class Server {
     public static void main(String args[]) throws IOException, ClassNotFoundException {
         piServer = new ServerSocket(port); // server socket aanmaken
 
-        while(true){
+        while (true) {
             System.out.println("Waiting...");
             Socket socket = piServer.accept();
 
@@ -27,7 +27,7 @@ public class Server {
             outputs.close();
             socket.close();
 
-            if(message.equalsIgnoreCase("corona")) break;
+            if (message.equalsIgnoreCase("corona")) break;
         }
         System.out.println("Shut down!");
         piServer.close();
