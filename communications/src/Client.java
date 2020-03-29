@@ -20,7 +20,7 @@ public class Client {
             if(i==4) {
                 outputs.writeObject("corona");
             }
-            else outputs.writeObject(""+i);
+            else outputs.writeObject("Nico werkt het? "+i);
 
             inputs = new ObjectInputStream(socket.getInputStream());
             String message = (String) inputs.readObject();

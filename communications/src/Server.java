@@ -21,7 +21,7 @@ public class Server {
             System.out.println("Recieved message: " + message);
 
             ObjectOutputStream outputs = new ObjectOutputStream(socket.getOutputStream()); //maak output stream voor socket
-            outputs.writeObject("Hello world! " + message);
+            outputs.writeObject("Hello client: " + message);
 
             inputs.close();
             outputs.close();
