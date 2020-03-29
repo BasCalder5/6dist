@@ -20,7 +20,7 @@ public class Client {
         ObjectOutputStream outputs;
 
         for (int i = 0; i < 5; i++) {
-            socket = new Socket(ipNico, 9876); // verbinding maken met server
+            socket = new Socket(ipNico, 1998); // verbinding maken met server
 
             outputs = new ObjectOutputStream(socket.getOutputStream()); // output op socket schrijven
             System.out.println("Request sent...");
