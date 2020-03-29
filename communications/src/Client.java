@@ -2,19 +2,24 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.SocketAddress;
 
 public class Client {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         InetAddress hostip = InetAddress.getLocalHost();
-        String ipNico = "143.129.39.106 -p 30032";
-        Socket socket;
+        //String ipNico = "143.129.39.106 -p 30032";
+
+        Socket socket = new Socket();
+        SocketAddress serveradd = new InetSocketAddress("143.129.39.10" ,30032);
+        
         ObjectInputStream inputs;
         ObjectOutputStream outputs;
 
         for (int i = 0; i < 5; i++) {
-            socket = new Socket(ipNico, 1998); // verbinding maken met server
+            socket.connect(serveradd, 1998); // verbinding maken met server
 
             outputs = new ObjectOutputStream(socket.getOutputStream()); // output op socket schrijven
             System.out.println("Request sent...");
