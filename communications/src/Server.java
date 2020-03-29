@@ -21,13 +21,13 @@ public class Server {
             System.out.println("Recieved message: " + message);
 
             ObjectOutputStream outputs = new ObjectOutputStream(socket.getOutputStream()); //maak output stream voor socket
-            outputs.writeObject("Hello client: " + message);
+            outputs.writeObject("hej hej: " + message);
 
             inputs.close();
             outputs.close();
             socket.close();
 
-            if (message.equalsIgnoreCase("corona")) break;
+            if (message.equalsIgnoreCase("challas")) break;
         }
         System.out.println("Shut down!");
         piServer.close();

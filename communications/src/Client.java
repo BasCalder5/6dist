@@ -18,7 +18,7 @@ public class Client {
             outputs = new ObjectOutputStream(socket.getOutputStream()); // output op socket schrijven
             System.out.println("Request sent...");
             if(i==4) {
-                outputs.writeObject("corona");
+                outputs.writeObject("challas");
             }
             else outputs.writeObject("Nico werkt het? "+i);
 
