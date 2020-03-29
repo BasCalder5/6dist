@@ -8,7 +8,7 @@ public class Client {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         InetAddress hostip = InetAddress.getLocalHost();
-        String ipNico = "143.129.39.106:30032";
+        String ipNico = "143.129.39.106 -p 30032";
         Socket socket;
         ObjectInputStream inputs;
         ObjectOutputStream outputs;
