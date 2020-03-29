@@ -10,16 +10,17 @@ public class Client {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         InetAddress hostip = InetAddress.getLocalHost();
-        //String ipNico = "143.129.39.106 -p 30032";
+        String ipNico = "10.0.14.7";
 
-        Socket socket = new Socket();
-        SocketAddress serveradd = new InetSocketAddress("143.129.39.10" ,30032);
-        
+
+//        SocketAddress serveradd = new InetSocketAddress("143.129.39.10" ,30032);
+        Socket socket;
+
         ObjectInputStream inputs;
         ObjectOutputStream outputs;
 
         for (int i = 0; i < 5; i++) {
-            socket.connect(serveradd, 1998); // verbinding maken met server
+            socket = new Socket(ipNico, 9876); // verbinding maken met server
 
             outputs = new ObjectOutputStream(socket.getOutputStream()); // output op socket schrijven
             System.out.println("Request sent...");
