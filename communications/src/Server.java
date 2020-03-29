@@ -1,35 +1,28 @@
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
-import java.net.Socket;
 
 public class Server {
 
-    private static ServerSocket piServer;
+    private static ServerSocket serverSocket;
     private static int port = 42069;
+    private static ServerThread serverThread;
+    private static Thread thread;
 
-    public static void main(String args[]) throws IOException, ClassNotFoundException {
-        piServer = new ServerSocket(port); // server socket aanmaken
+    public static void main(String[] args) throws IOException {
+        serverSocket = new ServerSocket(port);
+
+        System.out.println("Server started...");
 
         while (true) {
-            System.out.println("Waiting...");
-            Socket socket = piServer.accept();
-
-            ObjectInputStream inputs = new ObjectInputStream(socket.getInputStream()); //lees input stream van socket
-            String message = (String) inputs.readObject();
-            System.out.println("Recieved message: " + message);
-
-            ObjectOutputStream outputs = new ObjectOutputStream(socket.getOutputStream()); //maak output stream voor socket
-            outputs.writeObject("hej hej: " + message);
-
-            inputs.close();
-            outputs.close();
-            socket.close();
-
-            if (message.equalsIgnoreCase("corona")) break;
+            serverThread = new ServerThread(serverSocket.accept());
+            System.out.println("sending socket to thread");
+            thread = new Thread();
+            thread.start();
         }
-        System.out.println("Shut down!");
-        piServer.close();
+    }
+
+    protected void finalize() throws IOException {
+        serverSocket.close();
+        System.out.println("Server socket closed");
     }
 }

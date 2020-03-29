@@ -37,7 +37,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="communications" />
@@ -69,6 +69,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServerThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ServerThread" />
+      <module name="communications" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (1)" />
@@ -77,8 +84,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.ServerThread" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
@@ -94,7 +102,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585479213439</updated>
-      <workItem from="1585479216651" duration="7491000" />
+      <workItem from="1585479216651" duration="11231000" />
     </task>
     <servers />
   </component>
