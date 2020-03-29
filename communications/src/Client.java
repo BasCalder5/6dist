@@ -8,17 +8,18 @@ public class Client {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         InetAddress hostip = InetAddress.getLocalHost();
+        String ipNico = "143.129.39.106:30032";
         Socket socket;
         ObjectInputStream inputs;
         ObjectOutputStream outputs;
 
         for (int i = 0; i < 5; i++) {
-            socket = new Socket(hostip.getHostName(), 42069); // verbinding maken met server
+            socket = new Socket(ipNico, 1998); // verbinding maken met server
 
             outputs = new ObjectOutputStream(socket.getOutputStream()); // output op socket schrijven
             System.out.println("Request sent...");
             if(i==4) {
-                outputs.writeObject("challas");
+                outputs.writeObject("oh no corona");
             }
             else outputs.writeObject("Nico werkt het? "+i);
 

@@ -27,7 +27,7 @@ public class Server {
             outputs.close();
             socket.close();
 
-            if (message.equalsIgnoreCase("challas")) break;
+            if (message.equalsIgnoreCase("corona")) break;
         }
         System.out.println("Shut down!");
         piServer.close();
