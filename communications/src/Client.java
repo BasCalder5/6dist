@@ -9,9 +9,9 @@ public class Client {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         String ip;
-        if (args[0] != null){
+        if (args.length > 0) {
             ip = args[0];
-        } else ip =  InetAddress.getLocalHost().getHostName();
+        } else ip = InetAddress.getLocalHost().getHostName();
 
 //        String ipNico = "10.0.14.7";
 
