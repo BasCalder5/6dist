@@ -6,9 +6,11 @@ import java.net.Socket;
 public class ServerThread implements Runnable {
 
     private Socket threadSocket;
+    private Thread currentThread;
 
     ServerThread(Socket clientSocket) {
         this.threadSocket = clientSocket;
+        currentThread = Thread.currentThread();
     }
 
     public void run() {
@@ -21,7 +23,7 @@ public class ServerThread implements Runnable {
             System.out.println("Recieved message: " + message);
 
             ObjectOutputStream outputs = new ObjectOutputStream(threadSocket.getOutputStream()); //maak output stream voor socket
-            outputs.writeObject("Server: " + message);
+            outputs.writeObject("Serverthread " + currentThread.getId() + ": " + message);
 
             inputs.close();
             outputs.close();
