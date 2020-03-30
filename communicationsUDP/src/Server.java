@@ -1,25 +1,26 @@
 import java.io.IOException;
-import java.net.ServerSocket;
-
-@SuppressWarnings("InfiniteLoopStatement")
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
 
 public class Server {
 
-    private static ServerSocket serverSocket;
-    private static int port = 42069;
-    private static ServerThread serverThread;
+    private static DatagramSocket socket;
+    private static int port = 32000;
 
     public static void main(String[] args) throws IOException {
 
-        serverSocket = new ServerSocket(port);
-        serverSocket.setReuseAddress(true);
+        socket = new DatagramSocket(port);
+        socket.setReuseAddress(true);
 
         System.out.println("Server started...");
 
-        while (true) {
-            serverThread = new ServerThread(serverSocket.accept());
-            new Thread(serverThread).start();
+        byte[] buf = new byte[1024];
+        DatagramPacket packet = new DatagramPacket(buf, buf.length);
+        socket.receive(packet);
+        String message = new String(packet.getData(), 0, packet.getLength());
 
-        }
+        System.out.println(message);
+
+        socket.close();
     }
 }
