@@ -38,9 +38,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client" />
+  <component name="RunManager" selected="Application.ClientUDP">
+    <configuration name="ClientUDP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ClientUDP" />
       <module name="communications" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -63,15 +63,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server" />
+    <configuration name="ServerThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ServerThread" />
       <module name="communications" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ServerThread" />
+    <configuration name="ServerUDP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ServerUDP" />
       <module name="communications" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -81,13 +81,13 @@
       <item itemvalue="Application.ServerThread" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (1)" />
-      <item itemvalue="Application.Server" />
-      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.ServerUDP" />
+      <item itemvalue="Application.ClientUDP" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.ClientUDP" />
+        <item itemvalue="Application.ServerUDP" />
         <item itemvalue="Application.ServerThread" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
@@ -106,7 +106,7 @@
       <updated>1585479213439</updated>
       <workItem from="1585479216651" duration="11231000" />
       <workItem from="1585550210024" duration="6932000" />
-      <workItem from="1585559484171" duration="1588000" />
+      <workItem from="1585559484171" duration="2388000" />
     </task>
     <servers />
   </component>

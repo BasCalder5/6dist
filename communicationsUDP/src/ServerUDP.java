@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
-public class Server {
+public class ServerUDP {
 
     private static DatagramSocket socket;
     private static int port = 32000;

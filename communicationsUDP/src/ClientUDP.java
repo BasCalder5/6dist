@@ -4,7 +4,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 
-public class Client {
+public class ClientUDP {
 
     public static void main(String[] args) throws IOException {
         String ip;
