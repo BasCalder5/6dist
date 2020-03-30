@@ -1,6 +1,8 @@
 import java.io.IOException;
 import java.net.ServerSocket;
 
+@SuppressWarnings("InfiniteLoopStatement")
+
 public class Server {
 
     private static ServerSocket serverSocket;
@@ -15,8 +17,8 @@ public class Server {
 
         while (true) {
             serverThread = new ServerThread(serverSocket.accept());
-            System.out.println("sending socket to thread");
-            thread = new Thread();
+            System.out.println("Sending socket to thread");
+            thread = new Thread(serverThread);
             thread.start();
         }
     }

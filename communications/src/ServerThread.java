@@ -23,11 +23,10 @@ public class ServerThread implements Runnable {
                 System.out.println("Recieved message: " + message);
 
                 ObjectOutputStream outputs = new ObjectOutputStream(threadSocket.getOutputStream()); //maak output stream voor socket
-                outputs.writeObject("hej hej: " + message);
+                outputs.writeObject("Server: " + message);
 
                 inputs.close();
                 outputs.close();
-                threadSocket.close();
 
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
@@ -36,6 +35,7 @@ public class ServerThread implements Runnable {
             assert message != null;
             if (message.equalsIgnoreCase("corona")) break;
         }
+
         System.out.println("Shut down thread!");
         try {
             threadSocket.close();
@@ -44,28 +44,3 @@ public class ServerThread implements Runnable {
         }
     }
 }
-
-//    public static void main(String args[]) throws IOException, ClassNotFoundException {
-//
-//
-//        while (true) {
-//            System.out.println("Waiting...");
-//            Socket socket = piServer.accept();
-//
-//            ObjectInputStream inputs = new ObjectInputStream(socket.getInputStream()); //lees input stream van socket
-//            String message = (String) inputs.readObject();
-//            System.out.println("Recieved message: " + message);
-//
-//            ObjectOutputStream outputs = new ObjectOutputStream(socket.getOutputStream()); //maak output stream voor socket
-//            outputs.writeObject("hej hej: " + message);
-//
-//            inputs.close();
-//            outputs.close();
-//            socket.close();
-//
-//            if (message.equalsIgnoreCase("corona")) break;
-//        }
-//        System.out.println("Shut down!");
-//        piServer.close();
-//    }
-
