@@ -15,14 +15,12 @@ public class Client {
         ObjectInputStream inputs;
         ObjectOutputStream outputs;
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             socket = new Socket(hostip.getHostName(), 42069); // verbinding maken met server
 
             outputs = new ObjectOutputStream(socket.getOutputStream()); // output op socket schrijven
             System.out.println("Request sent...");
-            if (i == 4) {
-                outputs.writeObject("corona");
-            } else outputs.writeObject("Client " + i);
+            outputs.writeObject("Client " + i);
 
             inputs = new ObjectInputStream(socket.getInputStream());
             String message = (String) inputs.readObject();
@@ -30,7 +28,7 @@ public class Client {
 
             inputs.close();
             outputs.close();
-            Thread.sleep(100);
+            Thread.sleep(1000);
         }
     }
 }

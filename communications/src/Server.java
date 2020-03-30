@@ -8,23 +8,18 @@ public class Server {
     private static ServerSocket serverSocket;
     private static int port = 42069;
     private static ServerThread serverThread;
-    private static Thread thread;
 
     public static void main(String[] args) throws IOException {
+
         serverSocket = new ServerSocket(port);
+        serverSocket.setReuseAddress(true);
 
         System.out.println("Server started...");
 
         while (true) {
             serverThread = new ServerThread(serverSocket.accept());
-            System.out.println("Sending socket to thread");
-            thread = new Thread(serverThread);
-            thread.start();
-        }
-    }
+            new Thread(serverThread).start();
 
-    protected void finalize() throws IOException {
-        serverSocket.close();
-        System.out.println("Server socket closed");
+        }
     }
 }
