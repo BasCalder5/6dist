@@ -8,15 +8,19 @@ import java.net.Socket;
 public class Client {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
-        InetAddress hostip = InetAddress.getLocalHost();
-        String ipNico = "10.0.14.7";
+        String ip;
+        if (args[0] != null){
+            ip = args[0];
+        } else ip =  InetAddress.getLocalHost().getHostName();
+
+//        String ipNico = "10.0.14.7";
 
         Socket socket;
         ObjectInputStream inputs;
         ObjectOutputStream outputs;
 
         for (int i = 0; i < 10; i++) {
-            socket = new Socket(hostip.getHostName(), 42069); // verbinding maken met server
+            socket = new Socket(ip, 42069); // verbinding maken met server
 
             outputs = new ObjectOutputStream(socket.getOutputStream()); // output op socket schrijven
             System.out.println("Request sent...");
