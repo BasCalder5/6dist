@@ -31,19 +31,19 @@ public class AccountController {
                 linkTo(methodOn(AccountController.class).all()).withSelfRel());
     }
 
-    @PostMapping("/accounts")
+    @PostMapping("/addaccount")
     Account newAccount(@RequestBody Account newAccount) {
         return repo.save(newAccount);
     }
 
-    @GetMapping("/accounts/{id}")
+    @GetMapping("/getaccount/{id}")
     EntityModel<Account> one(@PathVariable Long id) {
         Account account =  repo.findById(id).orElseThrow(() -> new AccountNotFoundException(id));
 
         return assembler.toModel(account);
     }
 
-    @PutMapping("/accounts/{id}")
+    @PutMapping("/editaccount/{id}")
     Account replaceAccount(@RequestBody Account newAccount, @PathVariable Long id) {
         return repo.findById(id).map(account -> {
             account.setName(newAccount.getName());
